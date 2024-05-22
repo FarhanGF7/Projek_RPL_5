@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Pendaftaran Mahasiswa {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <br>
+        <h1 class="text-center"><u>Registrasi Mahasiswa</u></h1>
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Username</i></label>
+            <input type="text" class="form-control mt-2" name="username" placeholder="Masukan Username" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Nama Depan</i></label>
+            <input type="text" class="form-control mt-2" name="first_name" placeholder="Masukan Nama Depan" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Nama Belakang</i></label>
+            <input type="text" class="form-control mt-2" name="last_name" placeholder="Masukan Nama Belakang">
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Email</i></label>
+            <input type="email" class="form-control mt-2" name="email" placeholder="Masukan Email" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">NIM</i></label>
+            <input type="number" class="form-control mt-2" name="nim" placeholder="Masukan NIM Mahasiswa" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Progam Studi</i></label>
+            <input type="text" class="form-control mt-2" name="jurusan" placeholder="Masukan Nama Prodi" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Kelas</i></label>
+            <input type="text" class="form-control mt-2" name="kelas" placeholder="Masukan Kelas" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Nomor Antri</i></label>
+            <input type="text" class="form-control mt-2" name="no_antri" placeholder="Masukan Nomor Antri" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Foto Mahasiswa</i></label>
+            <input type="file" class="form-control mt-2" name="image" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Password</i></label>
+            <input type="password" class="form-control mt-2" name="password" placeholder="Masukan Password" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Kofirmasi Password</i></label>
+            <input type="password" class="form-control mt-2" name="confirm_password" placeholder="Konfirmasi Password" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary mt-4">Registrasi Sebagai Mahasiswa</button>
+</div>
+</form>
+{% endblock %}
+{% block js %}
+{% if alert %}
+<script>
+    
+    alert("Registration Berhasil.")
+    document.location = "/mahasiswa_login"
+    
+</script>
+{% endif %}
+{% endblock %}
+

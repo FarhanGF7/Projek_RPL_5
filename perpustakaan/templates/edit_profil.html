@@ -1,0 +1,51 @@
+{% extends 'mahasiswa_navbar.html' %}
+
+{% block title %} Edit Profile {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <form method="POST"> {% csrf_token %}
+<div class="row mt-4">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Email</i></label>
+        <input type="email" class="form-control mt-2" name="email" value="{{user.email}}">
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">NIM</i></label>
+        <input type="number" class="form-control mt-2" name="nim" value="{{user.student.nim}}">
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Prodi</i></label>
+        <input type="text" class="form-control mt-2" name="jurusan" value="{{user.student.jurusan}}">
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Kelas</i></label>
+        <input type="text" class="form-control mt-2" name="kelas" value="{{user.student.kelas}}">
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">ID</i></label>
+        <input type="text" class="form-control mt-2" name="no_antri" value="{{user.student.no_antri}}">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary mt-5">Ubah Profile</button>
+</form>
+</div>
+{% endblock %}
+{% block js %}
+{% if alert %}
+<script>
+    
+    alert("Profile Updated Successfully.")
+    document.location = "/profile"
+    
+</script>
+{% endif %}
+{% endblock %}

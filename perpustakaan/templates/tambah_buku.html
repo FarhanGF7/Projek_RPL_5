@@ -1,0 +1,50 @@
+{% extends 'admin_navbar.html' %}
+{% load static %}
+{% block title %} Tambah Buku {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <form method="POST"> 
+    {% csrf_token %}
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Judul Buku</i></label>
+            <input type="text" class="form-control mt-2" name="judul" placeholder="Masukan Nama Buku" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Nama Pembuat</i></label>
+            <input type="text" class="form-control mt-2" name="author" placeholder="Masukan Nama Author" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Nomor Buku</i></label>
+            <input type="number" class="form-control mt-2" name="nomor_buku" placeholder="Masukan Nomor Buku" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Kategori</i></label>
+            <input type="text" class="form-control mt-2" name="kategori" placeholder="Masukan Kategori Buku" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary mt-4">Tambah Buku</button>
+</div>
+</form>
+{% endblock %}
+{% block js %}
+{% if alert %}
+<script>
+    
+    alert("Buku Berhasil Ditambahkan.")
+    document.location = "/list_buku"
+    
+</script>
+{% endif %}
+{% endblock %}

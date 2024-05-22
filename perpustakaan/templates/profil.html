@@ -1,0 +1,89 @@
+{% extends 'mahasiswa_navbar.html' %}
+
+{% block title %} Profil {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+
+<div class="container profile">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="{{user.mahasiswa.image.url}}" alt="" width="310px" height="270px">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="profile-tab">
+                    <div class="tab-pane">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>ID:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user.id}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Username:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Nama:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user.get_full_name}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user.email}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>NIM:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user.mahasiswa.nim}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Prodi:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user.mahasiswa.jurusan}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Kelas:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user.mahasiswa.kelas}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Nomor Antri:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user.mahasiswa.no_antri}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/edit_profil/" style="width: 9rem;" class="btn btn-outline-primary mt-3">Edit Profile</a>
+                </div>
+            </div>
+</div>
+</div>
+{% endblock %}

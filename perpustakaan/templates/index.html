@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Perpustakaan UMKT {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="p-4 bg-light">
+    <div class="container-fluid py-3">
+      <h1 class="display-5 fw-bold">Selamat Datang Di Perpustakaan Online Universitas Muhammadiyah Kalimantan Timur </h1>
+      <p class="col-md-8 fs-4">Anda dapat mendaftar sebagai Mahasiswa. Anda akan dapat menerbitkan buku apa pun melalui admin. Setelah itu, Anda harus mengembalikan buku tersebut dalam waktu 14 hari atau akan dikenakan denda sebesar Rp. 2000 per hari hingga buku tersebut dikembalikan.
+    </div>
+    <br>
+    <div class="container">
+  <div class="row">
+
+    <div class="col-lg-6">
+      <img src="{% static 'assets/image/admin.png' %}" width="50%" height="50%" alt=""><br><br>
+        <a class="btn btn-outline-primary btn-lg" style="text-align:center" href="/admin_login/">Admin</a>
+    </div>
+
+    <div class="col-lg-6">
+      <img src="{% static 'assets/image/students.png' %}" width="50%" height="50%" alt=""><br><br>
+      <a class="btn btn-outline-primary btn-lg" href="/mahasiswa_login/">Mahasiswa</a>
+    </div>
+  </div>
+  </div>
+</div>
+{% endblock %}
