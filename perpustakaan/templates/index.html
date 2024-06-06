@@ -4,25 +4,205 @@
 {% block css %}
 {% endblock %}
 {% block body %}
-<div class="p-4 bg-light">
-    <div class="container-fluid py-3">
-      <h1 class="display-5 fw-bold">Selamat Datang Di Perpustakaan Online Universitas Muhammadiyah Kalimantan Timur </h1>
-      <p class="col-md-8 fs-4">Anda dapat mendaftar sebagai Mahasiswa. Anda akan dapat menerbitkan buku apa pun melalui admin. Setelah itu, Anda harus mengembalikan buku tersebut dalam waktu 14 hari atau akan dikenakan denda sebesar Rp. 2000 per hari hingga buku tersebut dikembalikan.
-    </div>
-    <br>
-    <div class="container">
-  <div class="row">
+<!--====== NAVBAR TWO PART START ======-->
 
-    <div class="col-lg-6">
-      <img src="{% static 'assets/image/admin.png' %}" width="50%" height="50%" alt=""><br><br>
-        <a class="btn btn-outline-primary btn-lg" style="text-align:center" href="/admin_login/">Admin</a>
-    </div>
+<!--====== NAVBAR TWO PART ENDS ======-->
 
-    <div class="col-lg-6">
-      <img src="{% static 'assets/image/students.png' %}" width="50%" height="50%" alt=""><br><br>
-      <a class="btn btn-outline-primary btn-lg" href="/mahasiswa_login/">Mahasiswa</a>
-    </div>
+<!--====== SLIDER PART START ======-->
+
+<section id="home" class="slider_area">
+  <div id="carouselThree" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+          <li data-target="#carouselThree" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselThree" data-slide-to="1"></li>
+      </ol>
+
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <div class="slider-content">
+                              <h1 class="title" style="font-size: 64px !important;">Perpustakaan Online</h1>
+                              <p class="text">Universitas Muhammadiyah Kalimantan Timur</p>
+                          </div>
+                      </div>
+                  </div> <!-- row -->
+              </div> <!-- container -->
+              <div class="slider-image-box d-none d-lg-flex align-items-end">
+                  <div class="slider-image">
+                      <img src="{% static 'frontend/assets/images/slider/1.png' %}" alt="Hero">
+                  </div> <!-- slider-imgae -->
+              </div> <!-- slider-imgae box -->
+          </div> <!-- carousel-item -->
+
+          <div class="carousel-item">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <div class="slider-content">
+                              <h1 class="title">Dibuat Untuk</h1>
+                              <p class="text">Digitalisasi agar semakin berkembang.</p>
+                          </div> <!-- slider-content -->
+                      </div>
+                  </div> <!-- row -->
+              </div> <!-- container -->
+              <div class="slider-image-box d-none d-lg-flex align-items-end">
+                  <div class="slider-image">
+                      <img src="{% static 'frontend/assets/images/slider/2.png' %}" alt="Hero">
+                  </div> <!-- slider-imgae -->
+              </div> <!-- slider-imgae box -->
+          </div> <!-- carousel-item -->
+      </div>
+
+      <a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev">
+          <i class="lni lni-arrow-left"></i>
+      </a>
+      <a class="carousel-control-next" href="#carouselThree" role="button" data-slide="next">
+          <i class="lni lni-arrow-right"></i>
+      </a>
   </div>
-  </div>
-</div>
+</section>
+
+<!--====== SLIDER PART ENDS ======-->
+
+<!--====== FEATRES TWO PART START ======-->
+
+<section id="services" class="features-area">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-10">
+              <div class="section-title text-center pb-10">
+                  <h3 class="title">Perpustakaan Online</h3>
+                  <p class="text">Selamat Datang Di Perpustakaan Online Universitas Muhammadiyah Kalimantan Timur.</p>
+              </div> <!-- row -->
+          </div>
+      </div> <!-- row -->
+      <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-7 col-sm-9">
+              <div class="single-features mt-40">
+                  <div class="features-title-icon d-flex justify-content-between">
+                      <h4 class="features-title"><a href="#">Mudah Digunakan</a></h4>
+                      <div class="features-icon">
+                          <i class="lni lni-brush"></i>
+                          <img class="shape" src="{% static 'frontend/assets/images/f-shape-1.svg' %}" alt="Shape">
+                      </div>
+                  </div>
+                  <div class="features-content">
+                      <p class="text">Dapat diakses dimana saja dan kapan saja.</p>
+                  </div>
+              </div> <!-- single features -->
+          </div>
+          <div class="col-lg-4 col-md-7 col-sm-9">
+              <div class="single-features mt-40">
+                  <div class="features-title-icon d-flex justify-content-between">
+                      <h4 class="features-title"><a href="#">Terintegrasi Admin</a></h4>
+                      <div class="features-icon">
+                          <i class="lni lni-layout"></i>
+                          <img class="shape" src="{% static 'frontend/assets/images/f-shape-1.svg' %}" alt="Shape">
+                      </div>
+                  </div>
+                  <div class="features-content">
+                      <p class="text">Anda akan dapat menerbitkan buku apa pun melalui admin</p>
+                  </div>
+              </div> <!-- single features -->
+          </div>
+          <div class="col-lg-4 col-md-7 col-sm-9">
+              <div class="single-features mt-40">
+                  <div class="features-title-icon d-flex justify-content-between">
+                      <h4 class="features-title"><a href="#">Aturan Peminjaman</a></h4>
+                      <div class="features-icon">
+                          <i class="lni lni-bolt"></i>
+                          <img class="shape" src="{% static 'frontend/assets/images/f-shape-1.svg' %}" alt="Shape">
+                      </div>
+                  </div>
+                  <div class="features-content">
+                      <p class="text">Anda harus mengembalikan buku tersebut dalam waktu 14 hari atau akan dikenakan denda sebesar Rp. 2000 per hari hingga buku tersebut dikembalikan.</p>
+                  </div>
+              </div> <!-- single features -->
+          </div>
+      </div> <!-- row -->
+  </div> <!-- container -->
+</section>
+
+<!--====== FEATRES TWO PART ENDS ======-->
+
+<!--====== CONTACT PART START ======-->
+
+<section id="contact" class="contact-area">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-10">
+              <div class="section-title text-center pb-30">
+                  <h3 class="title">Kontak</h3>
+                  <p class="text">Narahubung jika terdapat pertanyaan terkait perpustakaan online UMKT.</p>
+              </div> <!-- section title -->
+          </div>
+      </div> <!-- row -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="contact-map mt-30">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6812317259155!2d117.13632027404107!3d-0.47496653527561167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67f21b115fd67%3A0x108077d433712165!2sUniversitas%20Muhammadiyah%20Kalimantan%20Timur%20Samarinda!5e0!3m2!1sid!2sid!4v1716877860794!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div> <!-- row -->
+          </div>
+      </div> <!-- row -->
+      <div class="contact-info pt-30">
+          <div class="row">
+              <div class="col-lg-4 col-md-6">
+                  <div class="single-contact-info contact-color-1 mt-30 d-flex ">
+                      <div class="contact-info-icon">
+                          <i class="lni lni-map-marker"></i>
+                      </div>
+                      <div class="contact-info-content media-body">
+                          <p class="text"> Jl Juanda No. 15, Samarinda<br> Indonesia.</p>
+                      </div>
+                  </div> <!-- single contact info -->
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="single-contact-info contact-color-2 mt-30 d-flex ">
+                      <div class="contact-info-icon">
+                          <i class="lni lni-envelope"></i>
+                      </div>
+                      <div class="contact-info-content media-body">
+                          <p class="text">kelompok5@gmail.com</p>
+                          <p class="text">support@kelompok5.com</p>
+                      </div>
+                  </div> <!-- single contact info -->
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="single-contact-info contact-color-3 mt-30 d-flex ">
+                      <div class="contact-info-icon">
+                          <i class="lni lni-phone"></i>
+                      </div>
+                      <div class="contact-info-content media-body">
+                          <p class="text">0855555555555</p>
+                          <p class="text">0855555555551</p>
+                      </div>
+                  </div> <!-- single contact info -->
+              </div>
+          </div> <!-- row -->
+      </div> <!-- contact info -->
+  </div> <!-- container -->
+</section>
+
+<!--====== CONTACT PART ENDS ======-->
+
+<!--====== FOOTER PART START ======-->
+
+<section class="footer-area footer-dark">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-6">
+              <div class="copyright text-center mt-35">
+                  <p class="text">Kelompok 5 Copyright 2024</p>
+              </div> <!--  copyright -->
+          </div>
+      </div> <!-- row -->
+  </div> <!-- container -->
+</section>
+{% endblock %}
+{% block js %}
+<script type="text/javascript">
+    $("#home").addClass("active");
+</script>
 {% endblock %}

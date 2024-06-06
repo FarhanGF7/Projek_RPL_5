@@ -164,5 +164,3 @@ def edit_profil(request):
         }
         return render(request, template_name, context)
     return render(request, template_name)
-
-

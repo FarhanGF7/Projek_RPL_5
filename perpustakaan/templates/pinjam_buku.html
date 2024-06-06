@@ -4,20 +4,38 @@
 {% block css %}
 {% endblock %}
 {% block body %}
-<div class="container mt-4">
-    <form method="POST"> {% csrf_token %}
-        {% for i in form %}
-        <div class="form-group">
-            <br>
-          <label class="control-label col-xs-4">{{ i.label_tag }}</label>
-          <div class="col-xs-8 mt-2">
-          {{ i }}
-           </div>
-        </div>
-        {% endfor %}
-    <button type="submit" class="btn btn-outline-primary mt-4">Pinjam Buku</button>
-</div>
-</form>
+<section id="contact" class="contact-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-wrapper form-style-two pt-115">
+                    <h4 class="contact-title pb-10"><i class="lni lni-add-files"></i> Pinjam <span>Buku.</span></h4>
+                    
+                    <form id="" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            {% for i in form %}
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>{{ i.label_tag }}</label>
+                                    <div class="input-items default">
+                                        {{ i }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <div class="col-md-12">
+                                <div class="form-input light-rounded-buttons mt-30">
+                                    <button type="submit" class="main-btn light-rounded-two">Submit</button>
+                                </div> <!-- form input -->
+                            </div>
+                        </div> <!-- row -->
+                    </form>
+                </div> <!-- contact wrapper form -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
 {% endblock %}
 {% block js %}
 {% if alert %}

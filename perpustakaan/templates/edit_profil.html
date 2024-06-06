@@ -5,39 +5,68 @@
 {% block css %}
 {% endblock %}
 {% block body %}
-<div class="container">
-    <form method="POST"> {% csrf_token %}
-<div class="row mt-4">
-    <div class="form-group col-md-6">
-        <label><i style="font-weight: bold;">Email</i></label>
-        <input type="email" class="form-control mt-2" name="email" value="{{user.email}}">
-    </div>
-    <div class="form-group col-md-6">
-        <label><i style="font-weight: bold;">NIM</i></label>
-        <input type="number" class="form-control mt-2" name="nim" value="{{user.student.nim}}">
-    </div>
-</div>
-
-<div class="row mt-4">
-    <div class="form-group col-md-6">
-        <label><i style="font-weight: bold;">Prodi</i></label>
-        <input type="text" class="form-control mt-2" name="jurusan" value="{{user.student.jurusan}}">
-    </div>
-    <div class="form-group col-md-6">
-        <label><i style="font-weight: bold;">Kelas</i></label>
-        <input type="text" class="form-control mt-2" name="kelas" value="{{user.student.kelas}}">
-    </div>
-</div>
-
-<div class="row mt-4">
-    <div class="form-group col-md-6">
-        <label><i style="font-weight: bold;">ID</i></label>
-        <input type="text" class="form-control mt-2" name="no_antri" value="{{user.student.no_antri}}">
-    </div>
-    </div>
-    <button type="submit" class="btn btn-outline-primary mt-5">Ubah Profile</button>
-</form>
-</div>
+<section id="contact" class="contact-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-wrapper form-style-two pt-115">
+                    <h4 class="contact-title pb-10"><i class="lni lni-share"></i> Ubah <span>Profil.</span></h4>
+                    
+                    <form id="" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Email</label>
+                                    <div class="input-items default">
+                                        <input name="email" type="email" placeholder="Email" value="{{user.email}}">
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>NIM</label>
+                                    <div class="input-items default">
+                                        <input type="text" name="nim" placeholder="NIM" value="{{user.student.nim}}">
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Prodi</label>
+                                    <div class="input-items default">
+                                        <input name="jurusan" type="text" placeholder="Program Studi" value="{{user.student.jurusan}}">
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Kelas</label>
+                                    <div class="input-items default">
+                                        <input type="text" name="kelas" placeholder="Kelas" value="{{user.student.kelas}}">
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>ID</label>
+                                    <div class="input-items default">
+                                        <input type="text" name="no_antri" placeholder="No Antri" value="{{user.student.no_antri}}">
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-input light-rounded-buttons mt-30">
+                                    <button type="submit" class="main-btn light-rounded-two">Login</button>
+                                </div> <!-- form input -->
+                            </div>
+                        </div> <!-- row -->
+                    </form>
+                </div> <!-- contact wrapper form -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
 {% endblock %}
 {% block js %}
 {% if alert %}

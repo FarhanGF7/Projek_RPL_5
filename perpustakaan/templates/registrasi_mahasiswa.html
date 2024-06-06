@@ -4,76 +4,123 @@
 {% block css %}
 {% endblock %}
 {% block body %}
-<div class="container">
-    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
-        <br>
-        <h1 class="text-center"><u>Registrasi Mahasiswa</u></h1>
-    <div class="row mt-4">
-        <div class="form-group col-md-12">
-            <label><i style="font-weight: bold;">Username</i></label>
-            <input type="text" class="form-control mt-2" name="username" placeholder="Masukan Username" required>
-        </div>
-    </div>
+<!--====== CONTACT PART START ======-->
 
-    <div class="row mt-4">
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">Nama Depan</i></label>
-            <input type="text" class="form-control mt-2" name="first_name" placeholder="Masukan Nama Depan" required>
-        </div>
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">Nama Belakang</i></label>
-            <input type="text" class="form-control mt-2" name="last_name" placeholder="Masukan Nama Belakang">
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">Email</i></label>
-            <input type="email" class="form-control mt-2" name="email" placeholder="Masukan Email" required>
-        </div>
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">NIM</i></label>
-            <input type="number" class="form-control mt-2" name="nim" placeholder="Masukan NIM Mahasiswa" required>
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">Progam Studi</i></label>
-            <input type="text" class="form-control mt-2" name="jurusan" placeholder="Masukan Nama Prodi" required>
-        </div>
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">Kelas</i></label>
-            <input type="text" class="form-control mt-2" name="kelas" placeholder="Masukan Kelas" required>
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">Nomor Antri</i></label>
-            <input type="text" class="form-control mt-2" name="no_antri" placeholder="Masukan Nomor Antri" required>
-        </div>
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">Foto Mahasiswa</i></label>
-            <input type="file" class="form-control mt-2" name="image" required>
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">Password</i></label>
-            <input type="password" class="form-control mt-2" name="password" placeholder="Masukan Password" required>
-        </div>
-        <div class="form-group col-md-6">
-            <label><i style="font-weight: bold;">Kofirmasi Password</i></label>
-            <input type="password" class="form-control mt-2" name="confirm_password" placeholder="Konfirmasi Password" required>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-outline-primary mt-4">Registrasi Sebagai Mahasiswa</button>
-</div>
-</form>
+<section id="contact" class="contact-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-wrapper form-style-two pt-115">
+                    <h4 class="contact-title pb-10"><i class="lni lni-share"></i> Registrasi <span>Mahasiswa.</span></h4>
+                    
+                    <form id="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Username</label>
+                                    <div class="input-items default">
+                                        <input name="username" type="text" placeholder="Username" required>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Nama Depan</label>
+                                    <div class="input-items default">
+                                        <input name="first_name" type="text" placeholder="Nama Depan" required>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Nama Belakang</label>
+                                    <div class="input-items default">
+                                        <input type="text" name="last_name" placeholder="Nama Belakang">
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Email</label>
+                                    <div class="input-items default">
+                                        <input name="email" type="email" placeholder="Email" required>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>NIM</label>
+                                    <div class="input-items default">
+                                        <input type="text" name="nim" placeholder="NIM" required>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Program Studi</label>
+                                    <div class="input-items default">
+                                        <input name="jurusan" type="text" placeholder="Nama Prodi" required>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Kelas</label>
+                                    <div class="input-items default">
+                                        <input type="text" name="kelas" placeholder="Kelas">
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Nomor Antri</label>
+                                    <div class="input-items default">
+                                        <input name="no_antri" type="text" placeholder="Nomor Antri" required>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Foto Mahasiswa</label>
+                                    <div class="input-items default">
+                                        <input type="file" name="image" class="form-control" placeholder="Kelas" required>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Password</label>
+                                    <div class="input-items default">
+                                        <input type="text" name="password" placeholder="Password" required>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Konfirmasi Password</label>
+                                    <div class="input-items default">
+                                        <input type="text" name="confirm_password" placeholder="Konfirmasi Password" required>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-input light-rounded-buttons mt-30">
+                                    <button type="submit" class="main-btn light-rounded-two">Submit</button>
+                                </div> <!-- form input -->
+                            </div>
+                        </div> <!-- row -->
+                    </form>
+                </div> <!-- contact wrapper form -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
 {% endblock %}
 {% block js %}
+<script type="text/javascript">
+    $("#mahasiswaRegister").addClass("active");
+</script>
 {% if alert %}
 <script>
     
@@ -83,4 +130,3 @@
 </script>
 {% endif %}
 {% endblock %}
-
