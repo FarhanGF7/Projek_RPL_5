@@ -124,8 +124,15 @@
 {% if alert %}
 <script>
     
-    alert("Registration Berhasil.")
-    document.location = "/mahasiswa_login"
+    
+
+    {% if username_exists %}
+        alert("Username sudah digunakan. Silakan pilih username lain.");
+        document.location = "/registrasi_mahasiswa"
+    {% else %}
+        alert("Registration Berhasil.")
+        document.location = "/mahasiswa_login"
+    {% endif %}
     
 </script>
 {% endif %}

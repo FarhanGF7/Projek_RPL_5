@@ -16,7 +16,7 @@ def admin_login(request):
             if request.user.is_superuser:
                 return redirect("/list_mahasiswa")
             else:
-                return HttpResponse("Kamu Bukan Admin.")
+                return redirect("/admin_login")
         else:
             alert = True
             return render(request, template_name, {'alert':alert})
@@ -26,6 +26,9 @@ def registrasi_mahasiswa(request):
     template_name = "registrasi_mahasiswa.html"
     if request.method == "POST":
         username = request.POST['username']
+
+        
+        
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         email = request.POST['email']
@@ -39,14 +42,19 @@ def registrasi_mahasiswa(request):
 
         if password != confirm_password:
             passnotsame = True
-            return render(request, template_name, {'passnotsame':passnotsame})
+            return render(request, template_name, {'passnotsame': passnotsame})
+        
+        if User.objects.filter(username=username).exists():
+            username_exists = True
+            alert = True
+            return render(request, template_name, {'username_exists': username_exists, 'alert': alert})
 
-        user = User.objects.create_user(username=username, email=email, password=password,first_name=first_name, last_name=last_name)
+        user = User.objects.create_user(username=username, email=email, password=password, first_name=first_name, last_name=last_name)
         mahasiswa = Mahasiswa.objects.create(user=user, nim=nim, jurusan=jurusan, kelas=kelas, no_antri=no_antri, image=image)
         user.save()
         mahasiswa.save()
         alert = True
-        return render(request, template_name, {'alert':alert})
+        return render(request, template_name, {'alert': alert})
     return render(request, template_name)
 
 def mahasiswa_login(request):
@@ -59,7 +67,6 @@ def mahasiswa_login(request):
         if user is not None:
             login(request, user)
             if request.user.is_superuser:
-                return HttpResponse("Kamu Bukan Mahasiswa!")
                 return redirect("/admin_login")
             else:
                 return redirect("/profil")
